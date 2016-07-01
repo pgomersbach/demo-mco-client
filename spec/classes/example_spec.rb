@@ -17,9 +17,9 @@ describe 'demo_mco_client' do
           it { is_expected.to contain_class('demo_mco_client') }
  
           it { is_expected.to contain_class('demo_mco_client::params') }
-          it { is_expected.to contain_class('demo_mco_client::install').that_comes_before('demo_mco_client::config') }
+          it { is_expected.to contain_class('demo_mco_client::install') }
           it { is_expected.to contain_class('demo_mco_client::config') }
-          it { is_expected.to contain_class('demo_mco_client::service').that_subscribes_to('demo_mco_client::config') }
+          it { is_expected.to contain_class('demo_mco_client::service') }
 
           it { is_expected.to contain_service('demo_mco_client') }
           it { is_expected.to contain_package('demo_mco_client').with_ensure('present') }
