@@ -12,5 +12,6 @@ class demo_mco_client::install {
     client           => true,
     manage_packages  => false,
     middleware_hosts => [ $::middleware_address ],
+    connector        => 'rabbitmq',
   }
 }
