@@ -19,13 +19,14 @@ class demo_mco_client::install {
   }
 
   file{ 'plugindir':
-    ensure => directory,
-    path   => '/opt/puppetlabs/mcollective/plugins',
+    ensure  => directory,
+    path    => '/opt/puppetlabs/mcollective/plugins',
+    require => Class[ '::mcollective' ],
   }
 
   file{ 'mco_plugins':
     path    => $mc_plugindir,
-    source  => 'puppet:///modules/profile_mcollective/mcollective/plugins',
+    source  => 'puppet:///modules/demo_mco_client/mcollective/plugins',
     recurse => true,
     require => [ Class[ '::mcollective' ], File['plugindir'] ],
   }
