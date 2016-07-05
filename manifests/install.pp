@@ -23,12 +23,6 @@ class demo_mco_client::install {
     default  => '/usr/libexec/mcollective/mcollective',
   }
 
-#  file{ 'plugindir':
-#    ensure  => directory,
-#    path    => '/opt/puppetlabs/mcollective/mcollective',
-#    require => Class[ '::mcollective' ],
-#  }
-
   file{ 'mco_plugins':
     path    => $mc_plugindir,
     source  => 'puppet:///modules/demo_mco_client/mcollective/plugins',
