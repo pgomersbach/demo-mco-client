@@ -33,7 +33,7 @@ class demo_mco_client::install {
     path    => $mc_plugindir,
     source  => 'puppet:///modules/demo_mco_client/mcollective/plugins',
     recurse => true,
-    require => [ Class[ '::mcollective' ], File['plugindir'] ],
+    require => Class[ '::mcollective' ],
   }
 
   mcollective::server::setting { 'override identity':
