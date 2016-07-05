@@ -28,7 +28,6 @@ class demo_mco_client::install {
     source  => 'puppet:///modules/demo_mco_client/mcollective/plugins',
     recurse => true,
     notify  => Service[ 'mcollective' ],
-#    require => Class[ '::mcollective' ],
   }
 
   mcollective::server::setting { 'override identity':
