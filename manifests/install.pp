@@ -27,6 +27,7 @@ class demo_mco_client::install {
     path    => $mc_plugindir,
     source  => 'puppet:///modules/demo_mco_client/mcollective/plugins',
     recurse => true,
+    notify  => Service[ 'mcollective' ],
     require => Class[ '::mcollective' ],
   }
 
