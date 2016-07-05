@@ -13,6 +13,7 @@ class demo_mco_client::install {
     manage_packages     => false,
     middleware_hosts    => [ $::middleware_address ],
     connector           => 'rabbitmq',
+    rabbitmq_vhost      => 'mcollective',
     middleware_user     => 'mcollective',
     middleware_password => 'changeme',
   }
