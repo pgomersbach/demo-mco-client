@@ -10,6 +10,7 @@ class demo_mco_client::install {
 
   class { '::mcollective':
     client           => true,
+    manage_packages  => false,
     middleware_hosts => [ $::middleware_address ],
   }
 }
