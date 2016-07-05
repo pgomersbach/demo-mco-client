@@ -17,4 +17,10 @@ class demo_mco_client::install {
     middleware_user     => 'mcollective',
     middleware_password => 'changeme',
   }
+
+  $mco_packeges = [ 'mcollective-plugins-puppetral', 'mcollective-plugins-process', 'mcollective-plugins-package', 'mcollective-plugins-service', 'mcollective-plugins-nrpe', 'mcollective-plugins-filemgr' ]
+  package { $mco_packeges:
+    ensure => installed,
+  }
+
 }
