@@ -19,13 +19,13 @@ class demo_mco_client::install {
   }
 
   $mc_plugindir = $::osfamily ? {
-    'Debian' => '/opt/puppetlabs/mcollective/plugins/mcollective',
+    'Debian' => '/opt/puppetlabs/mcollective/mcollective',
     default  => '/usr/libexec/mcollective/mcollective',
   }
 
   file{ 'plugindir':
     ensure  => directory,
-    path    => '/opt/puppetlabs/mcollective/plugins',
+    path    => '/opt/puppetlabs/mcollective/mcollective',
     require => Class[ '::mcollective' ],
   }
 
