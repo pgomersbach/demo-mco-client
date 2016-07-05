@@ -9,9 +9,11 @@ class demo_mco_client::install {
   }
 
   class { '::mcollective':
-    client           => true,
-    manage_packages  => false,
-    middleware_hosts => [ $::middleware_address ],
-    connector        => 'rabbitmq',
+    client              => true,
+    manage_packages     => false,
+    middleware_hosts    => [ $::middleware_address ],
+    connector           => 'rabbitmq',
+    middleware_user     => 'mcollective',
+    middleware_password => 'changeme',
   }
 }
