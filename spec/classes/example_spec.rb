@@ -20,9 +20,8 @@ describe 'demo_mco_client' do
           it { is_expected.to contain_class('demo_mco_client::install') }
           it { is_expected.to contain_class('demo_mco_client::config') }
           it { is_expected.to contain_class('demo_mco_client::service') }
+          it { is_expected.to contain_class('mcollective') }
 
-          it { is_expected.to contain_service('demo_mco_client') }
-          it { is_expected.to contain_package('demo_mco_client').with_ensure('present') }
 
         end
       end

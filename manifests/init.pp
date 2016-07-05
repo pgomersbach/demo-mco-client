@@ -11,6 +11,7 @@ class demo_mco_client
 (
   $package_name = $::demo_mco_client::params::package_name,
   $service_name = $::demo_mco_client::params::service_name,
+  $middleware_address = $::demo_mco_client::params::middleware_address,
 ) inherits ::demo_mco_client::params {
 
   # validate parameters here

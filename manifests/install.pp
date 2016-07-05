@@ -8,7 +8,8 @@ class demo_mco_client::install {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
-  package { $::demo_mco_client::package_name:
-    ensure => present,
+  class { '::mcollective':
+    client           => true,
+    middleware_hosts => [ $::middleware_address ],
   }
 }
