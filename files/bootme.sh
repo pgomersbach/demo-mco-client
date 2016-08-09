@@ -68,4 +68,4 @@ echo "Preparing modules"
 cp -a /root/demo-mco-client/spec/fixtures/modules/* $MODULEDIR
 
 echo "Run puppet apply"
-/usr/local/bin/puppet apply -e "include demo-mco-client"
+/usr/local/bin/puppet apply -e "include demo_mco_client"
